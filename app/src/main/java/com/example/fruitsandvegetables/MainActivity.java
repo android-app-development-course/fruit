@@ -1,5 +1,6 @@
 package com.example.fruitsandvegetables;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -22,7 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
 
 
@@ -166,8 +167,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.delete:
                 Toast.makeText(this,"You clicked Delete",Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.setting:
-                Toast.makeText(this,"You clicked Setting",Toast.LENGTH_SHORT).show();
+            case R.id.setting://(其实已经改成了下线功能，只是懒得改id)
+                //Toast.makeText(this,"You clicked Setting",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent("com.example.fruitsandvegetables.FORCE_OFFLINE");
+                sendBroadcast(intent);
                 break;
             default:
                     break;

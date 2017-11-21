@@ -10,7 +10,7 @@
         <item
             android:icon="@drawable/shibie"
             android:id="@+id/ShiBie"
-            android:title="Fruit identification"/>
+            android:title="Fruit Identification"/>
 
         <item
             android:id="@+id/YangPinKu"
