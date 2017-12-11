@@ -1,5 +1,6 @@
 package com.example.fruitsandvegetables;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -9,6 +10,7 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -68,6 +70,24 @@ public class MainActivity extends BaseActivity {
         deletefloatingactionbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                builder.setTitle("二次确认");
+                builder.setMessage("Do you really want to delete this fruit card?");
+                builder.setPositiveButton("Yes,delete it", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(MainActivity.this,"Deleted Successfully",Toast.LENGTH_SHORT).show();
+                    }
+                });
+                builder.setNegativeButton("No,No,No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //
+                    }
+                });
+                builder.create();
+                builder.show();
+
                 Snackbar.make(v,"Fruit Data Deleted",
                         Snackbar.LENGTH_SHORT).setAction("Undo", new View.OnClickListener() {
                     @Override
@@ -82,6 +102,24 @@ public class MainActivity extends BaseActivity {
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                builder.setTitle("二次确认");
+                builder.setMessage("Do you really want to add a fruit card?");
+                builder.setPositiveButton("Yes,add one", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(MainActivity.this,"Added Successfully",Toast.LENGTH_SHORT).show();
+                    }
+                });
+                builder.setNegativeButton("No,No,No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //
+                    }
+                });
+                builder.create();
+                builder.show();
+
                 Snackbar.make(v,"Fruit Added",Snackbar.LENGTH_SHORT).setAction("Undo",
                         new View.OnClickListener() {
                             @Override
@@ -98,6 +136,48 @@ public class MainActivity extends BaseActivity {
         setSupportActionBar(toolbar);
 
         NavigationView navigationView = (NavigationView)findViewById(R.id.nav_view);
+        //左侧滑出目录的点击事件实现
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch (item.getItemId()){
+                    case R.id.YangPinKu:
+                        Toast.makeText(MainActivity.this,"This is the NavigationView YangPinKu",
+                                Toast.LENGTH_SHORT).show();
+                        mdrawerLayout.closeDrawers();
+                        break;
+                    case R.id.ShiBie:
+                        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                        builder.setTitle("This is the main function");
+                        builder.setMessage("We will spare no effort to finish it");
+                        builder.setPositiveButton("Sure ,we will", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                    Toast.makeText(MainActivity.this,"soon coming!",Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                        builder.setNegativeButton("Still we will", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                    //
+                            }
+                        });
+                        builder.create();
+                        builder.show();
+                        mdrawerLayout.closeDrawers();
+                        break;
+                    case R.id.MyAcount:
+                        Toast.makeText(MainActivity.this,"This is MyAccount page",Toast.LENGTH_SHORT).show();
+                        mdrawerLayout.closeDrawers();
+                        break;
+                        default:
+                            break;
+                }
+                return true;
+            }
+        });
+
 
 
         mdrawerLayout = (DrawerLayout)findViewById(R.id.drawerLayout);
@@ -108,13 +188,25 @@ public class MainActivity extends BaseActivity {
         }
 
         navigationView.setCheckedItem(R.id.YangPinKu);
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+        /*navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 mdrawerLayout.closeDrawers();
                 return true;
             }
+        });*/
+
+
+        //左侧滑出栏的点击事件
+        View headview = navigationView.getHeaderView(0);
+        headview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this,"This is the headview listener",Toast.LENGTH_SHORT).show();
+                mdrawerLayout.closeDrawers();
+            }
         });
+
 
     }
 

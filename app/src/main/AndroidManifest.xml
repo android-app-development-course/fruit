@@ -14,19 +14,13 @@
             android:theme="@style/FruitActivityTheme" />
         <activity
             android:name=".MainActivity"
-            android:label="Fruits Library">
-
-        </activity>
-        <activity android:name=".LoginActivity"
-            >
-
+            android:label="Fruits Library"></activity>
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-
         </activity>
     </application>
 
