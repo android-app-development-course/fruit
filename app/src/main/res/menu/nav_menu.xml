@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+
     <group android:checkableBehavior="single">
 
         <item
@@ -17,12 +18,31 @@
             android:icon="@drawable/yangpinku"
             android:title="Fruits Library"/>
 
+        <item
+            android:id="@+id/object_identification"
+            android:icon="@drawable/object"
+            android:title="Object Identification"/>
 
-
-
-
-
+        <item
+            android:id="@+id/object_library"
+            android:icon="@drawable/library"
+            android:title="Objects Library"/>
 
     </group>
+
+
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_contact_us"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Contact us" />
+        </menu>
+    </item>
 
 </menu>

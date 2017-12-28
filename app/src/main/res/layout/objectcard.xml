@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/TV_object"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="欢迎来到物品卡界面"
+        android:padding="5sp"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="物品照片:"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:padding="5dp"
+        android:id="@+id/IV_ObjectCard"
+        android:layout_width="match_parent"
+        android:layout_height="@android:dimen/thumbnail_height"
+        android:scaleType="fitCenter"
+        android:visibility="visible"
+        app:srcCompat="@drawable/lantern" />
+
+    <LinearLayout
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/OpenCamera1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:background="@color/colorPrimary"
+            android:onClick="openCameraC"
+            android:text="拍照" />
+
+        <Button
+            android:id="@+id/OpenAlbum1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:textStyle="bold"
+            android:textColor="#fff"
+            android:onClick="openAlbumC"
+            android:text="从相册中获取" />
+    </LinearLayout>
+
+
+    <TextView
+        android:padding="5dp"
+        android:id="@+id/TV_object_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="物品名称:"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@color/colorPrimary" />
+
+    <EditText
+        android:id="@+id/ET_ObjectCardName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textColor="@color/colorAccent"
+        android:inputType="textPersonName"
+        android:text="FruitsName" />
+
+
+    <TextView
+        android:id="@+id/TV_object_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="物品描述:"
+        android:padding="5dp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/ET_ObjectCardInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textColor="@color/colorAccent"
+        android:inputType="textPersonName"
+        android:text="This is a **********" />
+
+    <LinearLayout
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/ObjectCard_OK"
+            android:layout_width="0dp"
+            android:background="@color/colorPrimary"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="fruit_conf"
+            android:text="确定" />
+
+        <Button
+            android:id="@+id/ObjectCard_Cancel"
+            android:textStyle="bold"
+            android:textColor="#fff"
+            android:background="@color/colorPrimary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="fruit_quit"
+            android:text="取消" />
+    </LinearLayout>
+
+</LinearLayout>

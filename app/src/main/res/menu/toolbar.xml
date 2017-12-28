@@ -9,6 +9,9 @@
         app:showAsAction="always"/>
 
     <item
+        android:id="@+id/addfirut1"
+        android:title="AddNew" />
+    <item
         android:id="@+id/delete"
         android:icon="@drawable/ic_delete"
         android:title="Delete"
