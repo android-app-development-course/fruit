@@ -1,32 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.fruitsandvegetables">
+    package="com.interjoy.FruitsIdentification">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAG" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="OurFruit"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".FruitActivity"
-            android:theme="@style/FruitActivityTheme" />
-        <activity
-            android:name=".MainActivity"
-            android:label="Fruits Library"></activity>
-        <activity android:name=".FruitCard"></activity>
-        <activity android:name=".LoginActivity">
+
+        <activity android:name="com.interjoy.CardAndDatabase.FruitCard"/>
+        <activity android:name="com.interjoy.CardAndDatabase.ObjectCardActivity"/>
+        <activity android:name="com.interjoy.framework.FruitActivity"
+            android:theme="@style/FruitActivityTheme"
+            />
+        <activity android:name="com.interjoy.login.BaseActivity" />
+        <activity android:name="com.interjoy.login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ObjectCardActivity"></activity>
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".EyeResultActivity" />
+        <activity android:name="com.interjoy.framework.FrameworkActivity"></activity>
     </application>
 
 </manifest>

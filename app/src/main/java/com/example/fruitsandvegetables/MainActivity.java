@@ -27,6 +27,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.fruitsandvegetables.identification.IdentificationActivity;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -180,7 +182,10 @@ public class MainActivity extends BaseActivity {
                         break;
 
                     case R.id.object_identification:
-                        //待添加
+
+                        //12.29添加
+                        Intent intent = new Intent(MainActivity.this, IdentificationActivity.class);
+                        startActivity(intent);
                         mdrawerLayout.closeDrawers();
                         break;
                     case R.id.object_library:

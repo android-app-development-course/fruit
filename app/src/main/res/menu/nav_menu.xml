@@ -11,17 +11,13 @@
         <item
             android:icon="@drawable/shibie"
             android:id="@+id/ShiBie"
-            android:title="Fruit Identification"/>
+            android:title="Identification"/>
 
         <item
             android:id="@+id/YangPinKu"
             android:icon="@drawable/yangpinku"
             android:title="Fruits Library"/>
 
-        <item
-            android:id="@+id/object_identification"
-            android:icon="@drawable/object"
-            android:title="Object Identification"/>
 
         <item
             android:id="@+id/object_library"
