@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">OurFruits</string>
+    <string name="app_name">Oh Fruits!</string>
     <string name="fruitsEye">水果识别</string>
     <string name="objectEye">家庭常见物品识别</string>
     <string name="nextPic">随机换一张</string>

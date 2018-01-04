@@ -94,7 +94,6 @@ public class FruitCard extends Activity {
         db.insert("Photo",null,values);
         Toast.makeText(this, "数据创建成功", Toast.LENGTH_LONG).show();
         db.close();
-
         finish();
     }
 

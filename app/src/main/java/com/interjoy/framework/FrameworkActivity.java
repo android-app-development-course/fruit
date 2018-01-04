@@ -44,14 +44,15 @@ public class FrameworkActivity extends BaseActivity {
     private DrawerLayout mdrawerLayout;
 
 
-    private Fruit[] fruits = {new Fruit("Apple", R.drawable.apple), new Fruit("Banana", R.drawable.banana),
-            new Fruit("Orange", R.drawable.orange), new Fruit("Watermelon", R.drawable.watermelon),
-            new Fruit("Pear", R.drawable.pear), new Fruit("Grape", R.drawable.grape),
-            new Fruit("Pineapple", R.drawable.pineapple), new Fruit("Strawberry", R.drawable.strawberry),
-            new Fruit("Cherry", R.drawable.cherry), new Fruit("Mango", R.drawable.mango),
-            new Fruit("Orange",R.drawable.fruit1),new Fruit("Lemon",R.drawable.fruit2),
-            new Fruit("Blueberry",R.drawable.fruit3),new Fruit("Strawberry",R.drawable.fruit4),
-            new Fruit("Kiwi",R.drawable.fruit5)
+    private Fruit[] fruits = {
+            new Fruit("Apple", R.drawable.apple,"This is an apple"), new Fruit("Banana", R.drawable.banana,"This is a banana"),
+            new Fruit("Orange", R.drawable.orange,"This is an orgnge"), new Fruit("Watermelon", R.drawable.watermelon,"This is a watermelon"),
+            new Fruit("Pear", R.drawable.pear,"This is a pear"), new Fruit("Grape", R.drawable.grape,"This is a grape"),
+            new Fruit("Pineapple", R.drawable.pineapple,"This is a pineapple"), new Fruit("Strawberry", R.drawable.strawberry,"This is a strawberry"),
+            new Fruit("Cherry", R.drawable.cherry,"This is a cherry"), new Fruit("Mango", R.drawable.mango,"This is a mango"),
+            new Fruit("Orange",R.drawable.fruit1,"This is an orgnge"),new Fruit("Lemon",R.drawable.fruit2,"This is a lemon"),
+            new Fruit("Blueberry",R.drawable.fruit3,"This is a blueberry"),new Fruit("Strawberry",R.drawable.fruit4,"This is a strawberry"),
+            new Fruit("Kiwi",R.drawable.fruit5,"This is a kiwi")
     };
 
     private List<Fruit> fruitList = new ArrayList<>();
@@ -234,14 +235,14 @@ public class FrameworkActivity extends BaseActivity {
     public void Query(){
         SQLiteDatabase db = myDatebaseHelper.getWritableDatabase();
         Cursor cursor = db.query("Photo", null, null, null, null, null, null);
-
         while (cursor.moveToNext()) {
             byte[] in = cursor.getBlob(cursor.getColumnIndex("fruitimage"));
             long did=cursor.getLong(cursor.getColumnIndex("_id"));
             String name = cursor.getString(cursor.getColumnIndex("fruitname"));
+            String info = cursor.getString(cursor.getColumnIndex("fruitinfo"));
             Bitmap bmpout = BitmapFactory.decodeByteArray(in, 0, in.length);
             Drawable pic=chage_to_drawable(bmpout);
-            Fruit Nfruit = new Fruit(name,pic,did);
+            Fruit Nfruit = new Fruit(name,in,did,info);
             fruitList.add(Nfruit);
         }
         cursor.close();

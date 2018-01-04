@@ -11,7 +11,7 @@
         <item
             android:icon="@drawable/shibie"
             android:id="@+id/ShiBie"
-            android:title="Identification"/>
+            android:title="Recognition"/>
 
         <item
             android:id="@+id/YangPinKu"

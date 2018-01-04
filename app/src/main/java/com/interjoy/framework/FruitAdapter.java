@@ -2,6 +2,8 @@ package com.interjoy.framework;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -28,7 +30,7 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder>{
         CardView cardView;
         ImageView fruitImage;
         TextView fruitName;
-
+        TextView fruitInfo;
         public ViewHolder(View view) {
             super(view);
             cardView = (CardView) view;
@@ -59,6 +61,8 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder>{
                 Intent intent = new Intent(mContext, FruitActivity.class);
                 intent.putExtra(FruitActivity.FRUIT_NAME, fruit.getName());
                 intent.putExtra(FruitActivity.FRUIT_IMAGE_ID, fruit.getImageId());
+                intent.putExtra(FruitActivity.FRUIT_INFO,fruit.getFruitinfo());
+                intent.putExtra(FruitActivity.FRUIT_IMAGE,fruit.getFruitBmp());
                 mContext.startActivity(intent);
             }
         });
@@ -80,9 +84,14 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder>{
     public void onBindViewHolder(ViewHolder holder, int position) {
         Fruit fruit = mFruitList.get(position);
         holder.fruitName.setText(fruit.getName());
-        Glide.with(mContext).load(fruit.getImageId()).into(holder.fruitImage);
+        if(fruit.getImageId()==0)holder.fruitImage.setImageBitmap(fruit2image(fruit.getFruitBmp()));
+        else Glide.with(mContext).load(fruit.getImageId()).into(holder.fruitImage);
     }
 
+    public  Bitmap fruit2image(byte[] in){
+        Bitmap fruitImage =BitmapFactory.decodeByteArray(in, 0, in.length);
+        return fruitImage;
+    }
     @Override
     public int getItemCount() {
         return mFruitList.size();

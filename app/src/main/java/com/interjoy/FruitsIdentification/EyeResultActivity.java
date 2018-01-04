@@ -49,8 +49,8 @@ import java.util.Random;
  */
 public class EyeResultActivity extends Activity {
     //请将您申请的APP KEY和APP SECRET正确填写
-    private String api_key = "b2097ac8ea6754670d88bb11e868e4ee";//APP KEY
-    private String api_secret = "b59b6272a25598f8b1c6a29704374de4";//APP SECRET
+    private String api_key = "f1dcef61621087323d0fb435fa0a46f0";//APP KEY
+    private String api_secret = "2d6a0025dca1901d56c4fc9e49751f40";//APP SECRET
     private ImageView image_pic, image_cancel, image_openLocalGallery,
             image_openCamera;// 展示图片，返回上个界面、打开本地相册、打开系统相机按钮控件
     private TextView tv_nextPic, tv_res, tv_name, tv_confi, tv_json_title,

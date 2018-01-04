@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#c7edcc"
+    tools:context="com.interjoy.login.MainLoginActivity">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold|italic"
+        android:textSize="35dp"
+        android:id="@+id/welcome1"
+        android:layout_marginTop="100dp"
+        android:layout_gravity="center"
+        android:text="Welcome"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold|italic"
+        android:textSize="35dp"
+        android:id="@+id/welcome2"
+        android:layout_marginTop="2dp"
+        android:layout_gravity="center"
+        android:text="Please Login"
+        />
+
+
+    <LinearLayout
+        android:layout_marginTop="100dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/qq_login"
+            android:layout_width="70dp"
+            android:layout_weight="1"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:src="@drawable/penguin" />
+
+        <ImageView
+            android:id="@+id/sms_login"
+            android:layout_weight="1"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:src="@drawable/sms_login" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:layout_weight="1"
+            android:textStyle="normal"
+            android:textAlignment="center"
+            android:text=" QQ登录"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="normal"
+            android:textSize="20dp"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:text="账号登录"/>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

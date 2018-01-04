@@ -2,6 +2,8 @@ package com.interjoy.framework;
 
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.ActionBar;
@@ -16,10 +18,13 @@ import com.interjoy.FruitsIdentification.R;
 
 public class FruitActivity extends AppCompatActivity {
 
-    public static final String FRUIT_NAME = "fruit_name";
+    public static final String FRUIT_NAME = "fruitname";
 
     public static final String FRUIT_IMAGE_ID = "fruit_image_id";
 
+    public static final String FRUIT_INFO="fruitinfo";
+
+    public static final String FRUIT_IMAGE = "fruitimage";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +32,8 @@ public class FruitActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String fruitName = intent.getStringExtra(FRUIT_NAME);
         int fruitImageId = intent.getIntExtra(FRUIT_IMAGE_ID, 0);
+        String fruitinfo = intent.getStringExtra(FRUIT_INFO);
+        byte[] in = intent.getByteArrayExtra(FRUIT_IMAGE);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         CollapsingToolbarLayout collapsingToolbar = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
         ImageView fruitImageView = (ImageView) findViewById(R.id.fruit_image_view);
@@ -37,15 +44,21 @@ public class FruitActivity extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
         collapsingToolbar.setTitle(fruitName);
-        Glide.with(this).load(fruitImageId).into(fruitImageView);
-        String fruitContent = generateFruitContent(fruitName);
+        if(fruitImageId==0)
+        {
+            Bitmap fruitimage = BitmapFactory.decodeByteArray(in, 0, in.length);
+            fruitImageView.setImageBitmap(fruitimage);
+        }
+        else Glide.with(this).load(fruitImageId).into(fruitImageView);
+        String fruitContent = generateFruitContent(fruitinfo);
         fruitContentText.setText(fruitContent);
     }
 
-    private String generateFruitContent(String fruitName) {
+    private String generateFruitContent(String fruitinfo) {
         StringBuilder fruitContent = new StringBuilder();
-        for (int i = 0; i < 500; i++) {
-            fruitContent.append(fruitName);
+        for (int i = 0; i < 100; i++) {
+            fruitContent.append(fruitinfo);
+            fruitContent.append("\n");
         }
         return fruitContent.toString();
     }

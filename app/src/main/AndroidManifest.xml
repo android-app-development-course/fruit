@@ -17,23 +17,25 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name="com.interjoy.CardAndDatabase.FruitCard"/>
-        <activity android:name="com.interjoy.CardAndDatabase.ObjectCardActivity"/>
-        <activity android:name="com.interjoy.framework.FruitActivity"
-            android:theme="@style/FruitActivityTheme"
-            />
-        <activity android:name="com.interjoy.login.BaseActivity" />
-        <activity android:name="com.interjoy.login.LoginActivity">
+        <activity android:name="com.interjoy.logopage.LogoActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name="com.interjoy.CardAndDatabase.FruitCard" />
+        <activity android:name="com.interjoy.CardAndDatabase.ObjectCardActivity" />
+        <activity
+            android:name="com.interjoy.framework.FruitActivity"
+            android:theme="@style/FruitActivityTheme" />
+        <activity android:name="com.interjoy.login.BaseActivity" />
+        <activity android:name="com.interjoy.login.LoginActivity" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".EyeResultActivity" />
-        <activity android:name="com.interjoy.framework.FrameworkActivity"></activity>
+        <activity android:name="com.interjoy.framework.FrameworkActivity" />
+        <activity android:name="com.interjoy.login.MainLoginActivity" />
+        <activity android:name="com.interjoy.login.QQLoginActivity"></activity>
     </application>
 
 </manifest>

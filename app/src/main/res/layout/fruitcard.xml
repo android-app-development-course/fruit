@@ -7,131 +7,154 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView4"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="欢迎来到水果卡界面"
-        android:padding="5sp"
-        android:textAlignment="center"
-        android:textColor="@color/colorAccent"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        android:layout_height="match_parent">
 
-    <TextView
-        android:padding="5dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="水果照片:"
-        android:textColor="@color/colorPrimary"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
-    <ImageView
-        android:padding="5dp"
-        android:id="@+id/FruitCardIm"
-        android:layout_width="match_parent"
-        android:layout_height="@android:dimen/thumbnail_height"
-        android:scaleType="fitCenter"
-        android:visibility="visible"
-        app:srcCompat="@drawable/cherry" />
-
-    <LinearLayout
-        android:padding="5dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/OpenCamera"
-            android:layout_width="0dp"
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textColor="#fff"
+            android:padding="5sp"
+            android:text="欢迎来到水果卡界面"
+            android:textAlignment="center"
+            android:textColor="@color/colorAccent"
+            android:textSize="24sp"
             android:textStyle="bold"
-            android:background="@color/colorPrimary"
-            android:onClick="openCameraC"
-            android:text="拍照" />
+            android:layout_alignParentTop="true"/>
 
-        <Button
-            android:id="@+id/OpenAlbum"
-            android:layout_width="0dp"
+        <ScrollView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@color/colorPrimary"
-            android:textStyle="bold"
-            android:textColor="#fff"
-            android:onClick="openAlbumC"
-            android:text="从相册中获取" />
-    </LinearLayout>
+            android:layout_below="@id/textView4"
+            android:layout_above="@+id/bottomly">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-    <TextView
-        android:padding="5dp"
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="水果名称:"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:textColor="@color/colorPrimary" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="水果照片:"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/FruitCardName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:textColor="@color/colorAccent"
-        android:inputType="textPersonName"
-        android:text="FruitsName" />
+                <ImageView
+                    android:id="@+id/FruitCardIm"
+                    android:layout_width="match_parent"
+                    android:layout_height="@android:dimen/thumbnail_height"
+                    android:padding="5dp"
+                    android:scaleType="fitCenter"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/cherry" />
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="水果描述:"
-        android:padding="5dp"
-        android:textColor="@color/colorPrimary"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+                    <Button
+                        android:id="@+id/OpenCamera"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="openCameraC"
+                        android:text="拍照"
+                        android:textColor="#fff"
+                        android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/FruitCardInfo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:textColor="@color/colorAccent"
-        android:inputType="textPersonName"
-        android:text="This is a **********" />
+                    <Button
+                        android:id="@+id/OpenAlbum"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:onClick="openAlbumC"
+                        android:text="从相册中获取"
+                        android:textColor="#fff"
+                        android:textStyle="bold" />
+                </LinearLayout>
 
-    <LinearLayout
-        android:padding="5dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="水果名称:"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="0dp"
-            android:background="@color/colorPrimary"
-            android:textColor="#fff"
-            android:textStyle="bold"
+                <EditText
+                    android:id="@+id/FruitCardName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="FruitsName"
+                    android:textColor="@color/colorAccent" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="水果描述:"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/FruitCardInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="This is a **********"
+                    android:textColor="@color/colorAccent" />
+
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/bottomly"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="fruit_conf"
-            android:text="确定" />
+            android:gravity="bottom"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            android:layout_alignParentBottom="true">
 
-        <Button
-            android:id="@+id/button2"
-            android:textStyle="bold"
-            android:textColor="#fff"
-            android:background="@color/colorPrimary"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="fruit_quit"
-            android:text="取消" />
-    </LinearLayout>
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/colorPrimary"
+                android:onClick="fruit_conf"
+                android:text="确定"
+                android:textColor="#fff"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/colorPrimary"
+                android:onClick="fruit_quit"
+                android:text="取消"
+                android:textColor="#fff"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
 
 </LinearLayout>

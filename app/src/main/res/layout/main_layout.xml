@@ -20,6 +20,7 @@
             android:scaleType="fitXY"
             android:src="@drawable/banana" />
 
+        <!--
         <ImageView
             android:id="@+id/image_skeye"
             android:layout_width="73dp"
@@ -27,6 +28,20 @@
             android:layout_marginLeft="25dp"
             android:layout_marginTop="40dp"
             android:src="@drawable/icon_logo" />
+
+            -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="40dp"
+            android:textSize="25dp"
+            android:textColor="@color/colorAccent"
+            android:textStyle="italic|bold"
+            android:text="@string/app_name"
+            />
+
     </FrameLayout>
 
     <View
