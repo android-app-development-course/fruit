@@ -13,7 +13,11 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            //1月5日添加混淆
+            //minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
+            //proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
