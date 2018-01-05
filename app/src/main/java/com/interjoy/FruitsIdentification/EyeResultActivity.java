@@ -3,6 +3,7 @@ package com.interjoy.FruitsIdentification;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -23,7 +24,10 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.google.gson.Gson;
+import com.interjoy.CardAndDatabase.FruitCard;
 import com.interjoy.model.Tag;
 import com.interjoy.model.Tags;
 import com.interjoy.skeyesdk.SKEyeSDK;
@@ -44,11 +48,12 @@ import java.util.Random;
 
 /**
  * 识别结果界面
- *
- * @author wangcan Interjoy
  */
 public class EyeResultActivity extends Activity {
-    //请将您申请的APP KEY和APP SECRET正确填写
+
+    private static final int TAKE_PHOTO=111;
+    private static final int PICK_PHOTO=222, MY_PERMISSIONS_REQUEST_CALL_PHONE2=333;
+
     private String api_key = "f1dcef61621087323d0fb435fa0a46f0";//APP KEY
     private String api_secret = "2d6a0025dca1901d56c4fc9e49751f40";//APP SECRET
     private ImageView image_pic, image_cancel, image_openLocalGallery,
@@ -205,7 +210,9 @@ public class EyeResultActivity extends Activity {
 
                 // 打开系统相机拍照
                 case R.id.image_openCamera:
-                    systemCamera(image_openCamera);
+                    //systemCamera(image_openCamera);
+                    Intent intent=new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                    startActivityForResult(intent,1);
                     break;
 
                 default:
@@ -606,4 +613,26 @@ public class EyeResultActivity extends Activity {
             }
         }).start();
     }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults)
+    {
+        if (requestCode == MY_PERMISSIONS_REQUEST_CALL_PHONE2)
+        {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED)
+            {
+                Intent intent=new Intent(Intent.ACTION_GET_CONTENT);
+                intent.setType("image/*");
+                startActivityForResult(intent,PICK_PHOTO);
+            } else
+            {
+                // Permission Denied
+                Toast.makeText(EyeResultActivity.this, "Permission Denied", Toast.LENGTH_SHORT).show();
+            }
+        }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
+
+
+
 }

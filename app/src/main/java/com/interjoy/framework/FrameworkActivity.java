@@ -88,11 +88,11 @@ public class FrameworkActivity extends BaseActivity {
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(FrameworkActivity.this);
                 builder.setTitle("二次确认");
-                builder.setMessage("Do you really want to add a fruit card?");
+                builder.setMessage("Add a fruit card?");
                 builder.setPositiveButton("Yes,add one", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(FrameworkActivity.this,"Added Successfully",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(FrameworkActivity.this,"请在下一页中添加",Toast.LENGTH_SHORT).show();
                         openFriutCard();
                     }
                 });
@@ -105,13 +105,13 @@ public class FrameworkActivity extends BaseActivity {
                 builder.create();
                 builder.show();
 
-                Snackbar.make(v,"Fruit Added",Snackbar.LENGTH_SHORT).setAction("Undo",
+                Snackbar.make(v,"Add Fruits Card",Snackbar.LENGTH_SHORT).setAction("Undo",
 
                         new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
                                 Toast.makeText(FrameworkActivity.this,
-                                        "Undo add fruit successfully",Toast.LENGTH_SHORT).show();
+                                        "Undo add fruit card successfully",Toast.LENGTH_SHORT).show();
                             }
                         }).show();
             }
@@ -130,12 +130,11 @@ public class FrameworkActivity extends BaseActivity {
 
                 switch (item.getItemId()){
                     case R.id.YangPinKu:
-                        Toast.makeText(FrameworkActivity.this,"This is the NavigationView YangPinKu",
+                        Toast.makeText(FrameworkActivity.this,"This is the Fruits Library",
                                 Toast.LENGTH_SHORT).show();
                         mdrawerLayout.closeDrawers();
                         break;
                     case R.id.ShiBie:
-                        //待添加
                         //12.30添加水果识别功能
                         Intent intent = new Intent(FrameworkActivity.this, MainActivity.class);
                         startActivity(intent);
@@ -143,23 +142,65 @@ public class FrameworkActivity extends BaseActivity {
                         break;
 
                     case R.id.MyAcount:
-                        Toast.makeText(FrameworkActivity.this,"This is MyAccount page",Toast.LENGTH_SHORT).show();
+                        AlertDialog.Builder builder = new AlertDialog.Builder(FrameworkActivity.this);
+                        builder.setTitle("My Account Info").setMessage("Name: Ruan /n Mail:1329522082@qq.com")
+                                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        //留空
+                                    }
+                                }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                //留空
+                            }
+                        }).create();
+                        builder.show();
+                        //Toast.makeText(FrameworkActivity.this,"This is MyAccount page",Toast.LENGTH_SHORT).show();
                         mdrawerLayout.closeDrawers();
                         break;
 
                     case R.id.object_library:
-                        //待添加
+                        //待添加功能
+                        AlertDialog.Builder builder1 = new AlertDialog.Builder(FrameworkActivity.this);
+                        builder1.setTitle("Objects Library").setMessage("Coming soon...")
+                                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        //留空
+                                    }
+                                }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                //留空
+                            }
+                        }).create();
+                        builder1.show();
                         mdrawerLayout.closeDrawers();
                         break;
 
                     case R.id.nav_share:
-                        //待添加
+                        //待添加功能
+                        AlertDialog.Builder builder2 = new AlertDialog.Builder(FrameworkActivity.this);
+                        builder2.setTitle("Share Function[soon coming...]").setMessage("You can share anything to your friends")
+                                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        //留空
+                                    }
+                                }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                //留空
+                            }
+                        }).create();
+                        builder2.show();
                         mdrawerLayout.closeDrawers();
                         break;
 
                     case R.id.nav_contact_us:
-                        AlertDialog.Builder builder1 = new AlertDialog.Builder(FrameworkActivity.this);
-                        builder1.setTitle("Contact us")
+                        AlertDialog.Builder builder3 = new AlertDialog.Builder(FrameworkActivity.this);
+                        builder3.setTitle("Contact us")
                                 .setMessage("please phone 18316299722")
                                 .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                                     @Override
@@ -173,8 +214,8 @@ public class FrameworkActivity extends BaseActivity {
                                         Toast.makeText(FrameworkActivity.this,"Do nothing",Toast.LENGTH_SHORT).show();
                                     }
                                 });
-                        builder1.create();
-                        builder1.show();
+                        builder3.create();
+                        builder3.show();
                         mdrawerLayout.closeDrawers();
                         break;
 
@@ -293,7 +334,8 @@ public class FrameworkActivity extends BaseActivity {
                 break;
 
             case R.id.backup:
-                Toast.makeText(this,"You clicked Backup",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this,"You clicked Backup",Toast.LENGTH_SHORT).show();
+                refreshFruits();
                 break;
 
             case R.id.addfirut1:

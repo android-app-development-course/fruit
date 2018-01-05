@@ -17,7 +17,8 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.interjoy.logopage.LogoActivity">
+        <activity android:name="com.interjoy.logopage.LogoActivity"
+            android:theme="@style/LogoPageTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,10 +29,11 @@
         <activity android:name="com.interjoy.CardAndDatabase.ObjectCardActivity" />
         <activity
             android:name="com.interjoy.framework.FruitActivity"
-            android:theme="@style/FruitActivityTheme" />
+            android:theme="@style/LogoPageTheme" />
         <activity android:name="com.interjoy.login.BaseActivity" />
         <activity android:name="com.interjoy.login.LoginActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity"
+            android:theme="@style/LogoPageTheme"/>
         <activity android:name=".EyeResultActivity" />
         <activity android:name="com.interjoy.framework.FrameworkActivity" />
         <activity android:name="com.interjoy.login.MainLoginActivity" />
