@@ -2,8 +2,6 @@ package com.interjoy.model;
 
 /**
  * Tag实体类
- *
- * @author wangcan  Interjoy
  */
 public class Tag {
     private String tag;// 标签名

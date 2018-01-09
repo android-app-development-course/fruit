@@ -10,9 +10,6 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 
-/**
- * Created by lenovo on 2017-11-10 0010.
- */
 
 public class BaseActivity extends AppCompatActivity {
 

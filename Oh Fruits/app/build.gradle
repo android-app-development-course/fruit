@@ -13,12 +13,27 @@ android {
     }
     buildTypes {
         release {
+
             //1月5日添加混淆
             //minifyEnabled false
-            minifyEnabled true
-            shrinkResources true
+            minifyEnabled false
+            //shrinkResources true
             //proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+/*
+            //1.9添加【混淆不当会导致识别出错】
+            // 不显示log
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            // 混淆
+            minifyEnabled true
+            // Zipalign优化
+            zipAlignEnabled true
+            // 移除无用的resource
+            shrinkResources true
+            // 混淆配置
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+*/
         }
     }
 }
