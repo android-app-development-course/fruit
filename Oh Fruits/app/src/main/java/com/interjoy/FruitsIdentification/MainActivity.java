@@ -10,7 +10,11 @@ import android.widget.ImageView;
 import com.interjoy.skutils.ConstConfig;
 import com.interjoy.skutils.LogByInterjoyUtils;
 
-
+/**
+ * SKEyeSDK Demo
+ * @author wangcan Interjoy
+ *
+ */
 public class MainActivity extends Activity {
 	private ImageView image_ObjectEye, image_FruitsEye;// 水果识别、常见物品识别控件
 

@@ -2,6 +2,8 @@ package com.interjoy.model;
 
 /**
  * 基础model类
+ *
+ * @author wangcan  Interjoy
  */
 public class JsonResult {
     private int error_code = 0;// 错误码
