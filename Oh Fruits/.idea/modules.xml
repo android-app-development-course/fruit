@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Oh Fruits.iml" filepath="$PROJECT_DIR$/Oh Fruits.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://D:\software\fruit\fruit-master\Oh Fruits\app\app.iml" filepath="D:\software\fruit\fruit-master\Oh Fruits\app\app.iml" />
+      <module fileurl="file://D:\software\fruit\fruit-master\Oh Fruits\fruit.iml" filepath="D:\software\fruit\fruit-master\Oh Fruits\fruit.iml" />
     </modules>
   </component>
 </project>
