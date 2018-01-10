@@ -20,7 +20,7 @@
         android:layout_alignParentBottom="true"
         android:textSize="14sp"
         android:textColor="#FFF"
-        android:text="1329522082@qq.com"
+        android:text="Oh Fruits@scnu.com"
         />
 
 
@@ -31,7 +31,7 @@
         android:layout_above="@id/mail"
         android:textColor="#FFF"
         android:textSize="14sp"
-        android:text="Ruan"/>
+        android:text="SCNU"/>
     
     
 
